@@ -1,0 +1,5 @@
+package clientes.rest;
+
+public class ClienteController {
+
+}
