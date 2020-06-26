@@ -62,7 +62,6 @@ INDEX VERSION 1.131+C:\Users\Rodrigo\Documents\GitHub\ws-stproject\.metadata\.pl
 4092831794.index
 1617465389.index
 3174082032.index
-1202945650.index
 2398680542.index
 1918883207.index
 859032782.index

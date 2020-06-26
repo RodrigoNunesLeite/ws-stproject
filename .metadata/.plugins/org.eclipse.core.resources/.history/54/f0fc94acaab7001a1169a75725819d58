@@ -1,0 +1,8 @@
+package model.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import model.entities.Cliente;
+
+public class ClienteRepository extends JpaRepository<Cliente, Integer > {
+
+}
