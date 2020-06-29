@@ -48,15 +48,13 @@ public class ClienteController {
 	}
 
 	@PutMapping("{id}")
-	@ResponseStatus(HttpStatus.NO_CONTENT)
+	@ResponseStatus(HttpStatus.NOT_FOUND)
 	public void atualizar(@PathVariable Integer id, @RequestBody Cliente clienteAtualizado) {
 		repository
 		.findById(id)
 		.map(cliente -> {
-			// clienteAtualizado.setId(cliente.getId());
-			cliente.setNome(clienteAtualizado.getNome());
-			cliente.setCpf(clienteAtualizado.getCpf());
-			return repository.save(cliente);
+			clienteAtualizado.setId(cliente.getId());
+			return repository.save(clienteAtualizado);
 		}).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
 	}
 
