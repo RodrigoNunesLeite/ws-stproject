@@ -1,0 +1,22 @@
+package clientes.rest;
+
+import java.util.stream.Collectors;
+
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+@RestControllerAdvice
+public class ApplicationControllerAdvice {
+
+	/*
+	 * Aqui estamos interceptando a exception MethodArgumentNotValidException
+	 */
+	@ExceptionHandler(MethodArgumentNotValidException.class)
+	public Object handleValidationErrors(MethodArgumentNotValidException ex) {
+		BindingResult bindingResult = ex.getBindingResult();
+		List<String> messages = bindingResult.getAllErrors().stream()
+				.map(objectError -> objectError.getDefaultMessage()).collect(Collectors.toList());
+	}
+}
