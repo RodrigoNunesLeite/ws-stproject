@@ -1,0 +1,5 @@
+package clientes.config;
+
+public class InternacionalizacaoConfig {
+
+}
