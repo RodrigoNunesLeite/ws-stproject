@@ -36,8 +36,8 @@ public class Cliente {
 	private String nome;
 
 	@Column(nullable = false, length = 11)
-	@NotNull(message = "{campo.cpf.obrigatorio}")
-	@CPF(message = "{campo.cpf.invalido}")
+	@NotNull
+	@CPF
 	private String cpf;
 
 	@Column(name = "data_cadastro", updatable=false)
